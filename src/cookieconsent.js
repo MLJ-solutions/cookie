@@ -2208,7 +2208,9 @@
     /**
      * Make CookieConsent object accessible globally
      */
-    if(typeof window[init] !== 'function'){
-        window[init] = CookieConsent
+    if (typeof window !== "undefined") {
+        if (typeof window[init] !== 'function') {
+            window[init] = CookieConsent
+        }
     }
 })();
